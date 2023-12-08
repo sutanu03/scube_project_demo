@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dashboard</title>
+	<link href="" rel="stylesheet" th:href="@{/css_and_images/styles.css}">
+	<!-- <link rel="stylesheet" href="styles.css"> -->
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+	<!--<i class='bx bx-user'></i> -->
+	<h1 class="header-text">Dashboard</h1>
+	<div class="form-box">
+		<div class="button-box">
+			<form action="redirectUser" method="get">
+				<input type="submit" id="userButton" value="User" />
+			</form>
+
+			<form action="redirectSupp" method="get">
+				<input type="submit" id="NewSuppButton" value="New Supplier Entry" />
+			</form>
+
+		</div>
+
+		<div class="button-box">
+			<form action="redirectAssignUser" method="get">
+				<input type="submit" id="assignUserButton" value="Assign User" />
+			</form>
+
+			<form action="redirectQuotation" method="get">
+				<input type="submit" id="quotationButton" value="Quotation" />
+			</form>
+
+		</div>
+
+		<div class="button-box">
+			<form action="redirectPO" method="get">
+				<input type="submit" id="pOrderButton" value="Purchase Order Generate" />
+			</form>
+
+			<form action="redirectInvoice" method="get">
+				<input type="submit" id="invoiceButton" value="Invoice" />
+			</form>
+		</div>
+
+	</div>
+
+</body>
+
+</html>
