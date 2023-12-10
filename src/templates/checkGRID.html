@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check Grid</title>
+  </head>
+  <body>
+    <form>
+      <table
+        id="maintable"
+        width="50%"
+        cellpadding="0"
+        cellspacing="0"
+        border="#729111 1px solid"
+      >
+        <tr>
+          <th align="center">Select</th>
+          <th align="center">Employee ID</th>
+          <th align="center">First Name</th>
+          <th align="center">Last Name</th>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" name="radio" id="radio" />
+            <input type="hidden" id="rowIndex" value="1" />
+          </td>
+          <td>
+            <input type="text" name="empid" />
+          </td>
+          <td>
+            <input type="text" name="empfname" />
+          </td>
+          <td>
+            <input type="text" name="emplname" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" name="radio1" id="radio1" />
+            <input type="hidden" id="rowIndex" value="2" />
+          </td>
+          <td>
+            <input type="text" name="empid1" />
+          </td>
+          <td>
+            <input type="text" name="empfname1" />
+          </td>
+          <td>
+            <input type="text" name="emplname1" />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input
+              type="submit"
+              name="AddRowAbove"
+              value="AddRowAbove"
+              onclick="addNewRowAbove()"
+            />
+          </td>
+          <td>
+            <input
+              type="submit"
+              name="AddRowBelow"
+              value="AddRowBelow"
+              onclick="addNewRowBelow()"
+            />
+          </td>
+          <td></td>
+        </tr>
+      </table>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script>
+      function SortRowIDs() {
+        // The code below finds all the <tr> elements in the table WITH checkboxes in them.
+        // This way, we skip the first row containing column headers and the last row containing buttons
+
+        // We use the jQuery .each() method to iterate through jQuery-object arrays
+        $("#maintable")
+          .find('tr > td > input[type="checkbox"]')
+          .each(function (index) {
+            // We assign the parent row of the current checkbox to the variable 'currentRow'
+            let currentRow = $(this).parent().parent();
+
+            // Here we give the current row an id based on its position in the table
+            $(currentRow).attr("id", "id_" + (index + 1));
+
+            // Prints the id's of each row
+            console.log("Current row's id: " + $(currentRow).attr("id"));
+          });
+
+        // This prints the id attribute of the selected checkbox's parent row, to show that
+        // the Id's were successfully assigned by the SortRowIDs() function
+        console.log("");
+        console.log(
+          "Selected row's id: " +
+            $("input:checked").parent().parent().attr("id")
+        );
+      }
+
+      function addNewRowAbove() {
+        var rowNumber = document.getElementById("rowIndex").value;
+        var rowNumberNew = parseInt(rowNumber) - 1;
+
+        var newRow = $("<tr/>");
+
+        newRow.html(
+          '<td><input type="checkbox" name="radio1" id="radio' +
+            rowNumberNew +
+            '" /><input type="hidden" id="rowIndex' +
+            rowNumberNew +
+            '" value="' +
+            rowNumberNew +
+            '"/></td><td><input type="text" name="empid" id="empid' +
+            rowNumberNew +
+            '"/></td><td><input type="text" name="empfname" id="empfname' +
+            rowNumberNew +
+            '"></input></td><td><input type="text" name="emplname" id="emplname' +
+            rowNumberNew +
+            '"></input></td>'
+        );
+
+        var selectedRow = $("input:checked").parent().parent();
+
+        $(newRow).insertBefore(selectedRow);
+
+        SortRowIDs();
+      }
+
+      function addNewRowBelow() {
+        var rowNumber = document.getElementById("rowIndex").value;
+        var rowNumberNew = parseInt(rowNumber) + 1;
+
+        var newRow = $("<tr/>");
+
+        newRow.html(
+          '<td><input type="checkbox" name="radio1" id="radio' +
+            rowNumberNew +
+            '"></input><input type="hidden" id="rowIndex' +
+            rowNumberNew +
+            '" value="' +
+            rowNumberNew +
+            '"/></td><td><input type="text" name="empid" id="empid' +
+            rowNumberNew +
+            '"></input></td><td><input type="text" name="empfname" id="empfname' +
+            rowNumberNew +
+            '"></input></td><td><input type="text" name="emplname" id="emplname' +
+            rowNumberNew +
+            '"></input></td>'
+        );
+
+        var selectedRow = $("input:checked").parent().parent();
+
+        $(newRow).insertAfter(selectedRow);
+
+        SortRowIDs();
+      }
+    </script>
+  </body>
+</html>

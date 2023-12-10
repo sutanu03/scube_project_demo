@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <!--<link href="" rel="stylesheet" th:href="@{/css_and_images/styles.css}"> 	-->
+    <link rel="stylesheet" href="/static/css_and_images/styles.css" />
+  </head>
+  <!-- action="loginUser" -->
+  <body>
+    <div class="form-box5">
+      <div class="image">
+        <img
+          src="https://cdn.pixabay.com/photo/2019/12/16/10/30/iphone-4699057_1280.jpg"
+          alt=""
+        />
+      </div>
+
+      <form name="loginForm" onsubmit="return validateForm()" method="post">
+        <div class="full-log">
+          <div class="header-text2">Login</div>
+          <div class="first">
+            <input
+              type="text"
+              name="a_email"
+              placeholder="Your Email ID"
+              required
+            />
+            <br />
+            <input
+              type="password"
+              name="g_password1"
+              placeholder="Your Password"
+              required
+            />
+            <br />
+          </div>
+
+          <button type="submit" id="loginButton" value="Sign in">
+            Sign in
+          </button>
+          <br />
+          <br />
+          <a th:href="@{toForgetPass}">Forget Password?</a>
+          <br />
+          <br />
+          <span>Don't have an account?</span>
+          <a th:href="@{toUserReg}">Sign up</a>
+        </div>
+      </form>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+    <!--<script src="" th:src="@{/js/script.js}"></script>-->
+  </body>
+</html>

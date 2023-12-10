@@ -1,0 +1,478 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+html,
+body {
+  text-align: center;
+  width: 100%;
+}
+
+.header-text2 {
+  margin-top: 20px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 30px;
+  color: #0047ab;
+  text-align: center;
+}
+
+.body-box {
+  text-align: center;
+  padding-top: 200px;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: #0047ab;
+  margin-left: 35px;
+}
+
+.body-box2 {
+  text-align: center;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+}
+
+.body-box2 p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+}
+
+title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+h2 {
+  color: #0047ab;
+  font-weight: bold;
+  width: 800px;
+  font-size: 40px;
+  font-family: Arial, Geneva, Helvetica, sans-serif;
+}
+
+p {
+  text-align: center;
+  color: #0096ff;
+  width: 700px;
+  margin-left: 50px;
+}
+
+img {
+  width: 700px;
+  height: 500px;
+  margin-top: 50px;
+  border-radius: 30px;
+  padding-bottom: 10px;
+}
+
+.image-us {
+  margin-top: 70px;
+  width: 300px;
+  height: 300px;
+  margin-left: 580px;
+}
+
+.form-box {
+  height: 600px;
+  width: 1500px;
+  margin: 50px auto;
+  display: flex;
+  background-color: #fff;
+  border-radius: 30px;
+  color: #fff;
+  padding-bottom: 50px;
+}
+
+.full-contact {
+  display: flex;
+}
+
+.full-contact p {
+  margin-left: 50px;
+  margin-top: 10px;
+  padding-top: 80px;
+  font-size: 18px;
+  width: 900px;
+}
+
+.full-contact img {
+  width: 600px;
+  height: 400px;
+  margin-left: 10px;
+}
+
+.btn {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 300px;
+}
+
+#signInButton {
+  margin-left: 0;
+  width: 150px;
+  height: 35px;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #0047ab;
+
+  border: 1px solid #0047ab;
+
+  font-weight: bold;
+}
+#signInButton:hover {
+  color: green;
+  background: white;
+  border: 1px solid green;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#signUp {
+  margin-top: 10px;
+  margin-left: 0;
+  width: 150px;
+  height: 35px;
+  border-radius: 20px;
+  background-color: #0047ab;
+  color: #fff;
+
+  font-weight: bold;
+}
+
+#signUp:hover {
+  color: #0047ab;
+  background: white;
+  border: 1px solid #0047ab;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#lrnMr {
+  margin-top: 10px;
+  margin-left: 0;
+  width: 150px;
+  height: 35px;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #0096ff;
+
+  border: 1px solid #0096ff;
+
+  font-weight: bold;
+}
+
+#lrnMr:hover {
+  color: #fff;
+  background: #0096ff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+a {
+  color: #87cefa;
+}
+
+a:hover {
+  color: #87cefa;
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+span {
+  color: #0047ab;
+}
+
+.sendemail {
+  padding-top: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding-bottom: 10px;
+}
+
+.sendemail #email {
+  border-radius: 12px;
+  width: 300px;
+  height: 35px;
+  color: #0047ab;
+  text-align: center;
+}
+
+.sendemail #query {
+  margin-top: 8px;
+  border-radius: 12px;
+  width: 700px;
+  height: 80px;
+  color: #0047ab;
+  text-align: center;
+}
+
+#sendAnEmail {
+  margin-top: 10px;
+  margin-left: 0;
+  width: 150px;
+  height: 35px;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #0047ab;
+
+  font-weight: bold;
+}
+
+#sendAnEmail:hover {
+  margin-top: 10px;
+  margin-left: 0;
+  width: 150px;
+  height: 35px;
+  border-radius: 20px;
+  background-color: #0047ab;
+  color: #fff;
+
+  font-weight: bold;
+}
+
+#copyright {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  text-align: center;
+  color: black;
+  font-size: medium;
+}
+
+/*  css for overlay */
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+  opacity: 0;
+}
+
+/*  css for login */
+
+.login-form {
+  width: 300px;
+  height: 400px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 8);
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  z-index: 9;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 10px 3px #ccc;
+  transition: 1s;
+}
+
+/*  css for registration */
+
+.reg-form {
+  width: 350px;
+  height: 630px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 8);
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  z-index: 9;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 10px 3px #ccc;
+  transition: 1s;
+}
+
+.span-cross {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  height: 30px;
+  width: 30px;
+  font-size: 30px;
+  color: red;
+  opacity: 0.75;
+}
+
+.span-cross:hover {
+  cursor: pointer;
+  color: red;
+  font-weight: bold;
+}
+
+.login-form input {
+  width: 100%;
+  height: 35px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+#loginButton {
+  margin-left: 0;
+  width: 150px;
+  height: 35px;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #0047ab;
+
+  border: 1px solid #0047ab;
+
+  font-weight: bold;
+}
+#loginButton:hover {
+  color: #fff;
+  background: #0047ab;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.reg-form input {
+  width: 100%;
+  height: 35px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+#regButton {
+  margin-left: 0;
+  width: 150px;
+  height: 35px;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #0047ab;
+
+  border: 1px solid #0047ab;
+
+  font-weight: bold;
+}
+#regButton:hover {
+  color: white;
+  background: #0047ab;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/*  Show Overlay  */
+
+.show-overlay {
+  opacity: 1;
+  z-index: 1;
+}
+
+/*   Visible Login Form */
+
+.show-login-form {
+  top: 50%;
+}
+
+/*   Visible registration Form */
+
+.show-reg-form {
+  top: 50%;
+}
+
+/* forget page */
+
+.full-log2 {
+  height: 200px;
+  width: 400px;
+  margin: 50px auto;
+  background-color: #fff;
+  border-radius: 30px;
+  color: #fff;
+  padding-bottom: 50px;
+}
+
+.full-log2 input {
+  text-align: center;
+  width: 250px;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+#updatePWButton {
+  color: #0047ab;
+  height: 40px;
+  width: 150px;
+  border-radius: 30px;
+  margin-top: 15px;
+  font-weight: bold;
+  border: 2px solid #0047ab;
+}
+
+#updatePWButton:hover {
+  color: #fff;
+  background-color: #0047ab;
+
+  cursor: pointer;
+}
+
+.form-box6 {
+  display: flex;
+  width: 700px;
+  height: 400px;
+  align-items: center;
+  padding-left: 450px;
+  padding-top: 350px;
+}
+
+#cancelPWButton {
+  color: #0047ab;
+  height: 40px;
+  width: 150px;
+  border-radius: 30px;
+  margin-top: 15px;
+  font-weight: bold;
+  border: 2px solid #0047ab;
+}
+
+#cancelPWButton:hover {
+  color: #fff;
+  background-color: #0047ab;
+
+  cursor: pointer;
+}
+
+.imageForget {
+  padding-top: 70px;
+}
+
+.imageForget img {
+  width: 450px;
+  height: 380px;
+}
+
+/* responsive for phone */
+@media screen and (max-width: 750px) {
+  .col-25,
+  .col-75,
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .form-box2 {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+  }
+}

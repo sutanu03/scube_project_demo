@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="ISO-8859-1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Reset</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- <link href="" rel="stylesheet" th:href="@{/css_and_images/styles.css}" /> -->
+    <link rel="stylesheet" href="/static/css_and_images/home.css" />
+  </head>
+  <body>
+    <div class="form-box6">
+      <form name="forgetForm" onsubmit="return validateForm()" method="post">
+        <div class="full-log2">
+          <div class="header-text2">Reset Your Password</div>
+          <div class="first">
+            <input
+              type="password"
+              name="oldPassword"
+              placeholder="Enter Your Old Password"
+              required
+            />
+            <br />
+            <input
+              type="password"
+              name="newPassword1"
+              id="newPassword1"
+              placeholder="Enter New Password"
+              required
+            />
+            <br />
+            <input
+              type="password"
+              name="newPassword2"
+              id="newPassword2"
+              placeholder="Confirm New Password"
+              onChange="checkTwoPW()"
+              required
+            />
+            <br />
+          </div>
+
+          <button
+            type="submit"
+            id="cancelPWButton"
+            onclick="window.location.href='home.html';"
+          >
+            Cancel
+          </button>
+          <button type="submit" id="updatePWButton" onclick="pageToHome()">
+            Update Password
+          </button>
+        </div>
+      </form>
+
+      <div class="imageForget">
+        <img
+          src="https://assets-v2.lottiefiles.com/a/4a774176-1171-11ee-ae48-bf87d1dea7a3/FzdIgU4ZSq.gif"
+        />
+      </div>
+    </div>
+
+    <!--  Footer & Copyright  -->
+    <span id="copyright">All Rights Reserved @ sutanu ghosal</span>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      function checkTwoPW() {
+        let newPW1 = $("#newPassword1").val();
+        let newPW2 = $("#newPassword2").val();
+
+        if (newPW1 != newPW2) {
+          $(".firstcheckTwoPW").html("Passwords do not match!");
+        }
+        //
+        else {
+          $(".firstcheckTwoPW").html("Passwords match.");
+        }
+      }
+
+      let btn = document.querySelector("#updatePWButton");
+
+      btn.addEventListener("click", function () {
+        alert("Password has been changed, Please login again!");
+        window.location.href = "home.html";
+      });
+    </script>
+    <!--<script src="" th:src="@{/js/script.js}"></script> -->
+  </body>
+</html>
