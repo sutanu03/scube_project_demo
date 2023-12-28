@@ -1,5 +1,7 @@
 package com.sutanu.main.model;
 
+import org.springframework.stereotype.Component;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -9,12 +11,12 @@ import jakarta.persistence.Id;
  * POJO class for quotation
  * 
  * */
-
+@Component
 @Entity
 public class Quotation {
 
 	@Id
-	@Column(name = "quotation_number")
+	@Column(name = "quotation_number", nullable = false)
 	private String a_quotation_number;
 
 	@Column(name = "date")

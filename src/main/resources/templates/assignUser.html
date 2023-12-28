@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="ISO-8859-1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   <link rel="stylesheet"
+          href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+    </script>
+    <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    </script>
+     <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- <link
+      href=""
+      rel="stylesheet"
+      th:href="@{/css_and_images/assignUser_css.css}"/> -->
+
+    <link
+      rel="stylesheet"
+      href="/static/css_and_images/assignUser_css.css"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark" style="background-color: #0047ab" fixed-top>
+      <!-- Navbar content -->
+      <div class="container-fluid">
+        <a class="navbar-brand" href="dashboard.html">Dashboard</a>
+        <div title="Go to Account">
+          <span
+            class="bx bx-user bg-light"
+            id="userLogo"
+            onclick="window.location.href='userDetails.html';"
+          ></span>
+        </div>
+      </div>
+    </nav>
+
+    <!--<i class='bx bx-user'></i> -->
+      <h1 class="header-text2 text-center">Add Users</h1>
+
+          <!--action="addMultipleUserTogether" method="post"-->
+
+<div class="table-div p-2">
+
+   <table class="table table-bordered" id="myTable">
+  <thead>
+    <tr class="table-active">
+      <th scope="col">Select user</th>
+      <th scope="col">User Name</th>
+      <th scope="col">Select Supplier</th>
+      <th scope="col">Supplier Name</th>
+      <th scope="col">Type</th>
+      
+    </tr>
+    
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">
+        <select>
+                <option value="">sutanughosal1@gmail.com</option>
+                <option value="">csesutanu@gmail.com</option>
+              </select>
+    </th>
+      <td class="text-center align-middle" id="description">
+        <input class="select-input"
+              type="text"
+              name="b_userName"
+              placeholder="ex: Sutanu Ghosal"
+              required
+            />
+      </td>
+      <td class="text-center align-middle">
+        <select>
+                <option value="">ITC-01-001</option>
+                <option value="">LTI-03-002</option>
+              </select>
+      </td>
+      <td class="text-center align-middle">
+        <input
+                type="text"
+                name="d_suppName"
+                placeholder="Supplier Name"
+              />
+      </td>
+      
+      <td class="text-center align-middle">
+        <select>
+                <option value="e_userType1">Normal</option>
+                <option value="e_userType2">Admin</option>
+              </select>
+      </td>
+    </tr>
+
+
+  </tbody>
+  
+  
+</table>
+<button type="button" class="btn btn-outline-success float-right" id="addRow">Add</button>
+</div>
+          </form>
+          <div class="button-grp d-flex justify-content-center">
+            <button
+            class="button-grp1"
+              type="submit"
+              value="Cancel"
+              onClick="window.location.reload();"
+            >
+              Cancel
+            </button>
+            <button
+            class="button-grp1"
+              type="submit"
+              name="addUsrBtn"
+              id="addMulUsrBtn"
+              value="submit"
+            >
+              Submit
+            </button>
+          </div>
+    <script>
+       $(document).ready(function() {
+  $('#addRow').click(function() {
+    $('#myTable tbody').append(`<tr>
+      <th scope="row">
+        <select>
+                <option value="">sutanughosal1@gmail.com</option>
+                <option value="">csesutanu@gmail.com</option>
+              </select>
+    </th>
+      <td class="text-center align-middle" id="description">
+        <input class="select-input"
+              type="text"
+              name="b_userName"
+              placeholder="ex: Sutanu Ghosal"
+              required
+            />
+      </td>
+      <td class="text-center align-middle">
+        <select>
+                <option value="">ITC-01-001</option>
+                <option value="">LTI-03-002</option>
+              </select>
+      </td>
+      <td class="text-center align-middle">
+        <input
+                type="text"
+                name="d_suppName"
+                placeholder="Supplier Name"
+              />
+      </td>
+      
+      <td class="text-center align-middle">
+        <select>
+                <option value="e_userType1">Normal</option>
+                <option value="e_userType2">Admin</option>
+              </select>
+      </td>
+    </tr>`);
+  });
+});
+    </script>
+  </body>
+</html>

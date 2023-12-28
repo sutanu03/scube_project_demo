@@ -17,7 +17,7 @@ import com.sutanu.main.repository.UserRepo;
 @Controller
 @ControllerAdvice
 public class ControllerForUser {
-
+/*
 	@Autowired
 	UserRepo usr;
 	
@@ -58,6 +58,6 @@ public class ControllerForUser {
 			return "dashboard.html";
 		}
 	}
-		
+	*/	
 	
 }

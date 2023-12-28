@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- <link href="" rel="stylesheet" th:href="@{/css_and_images/styles.css}" /> -->
+    <link rel="stylesheet" href="/static/css_and_images/aboutUs.css" />
+    <title>About Us</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark" style="background-color: #0047ab" fixed-top>
+      <!-- Navbar content -->
+      <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{toHome}">SG Company</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="about-us.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact-us.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="content">
+      <div class="body-box2">
+        <br /><br />
+        <h1 class="text-start px-2">About Us</h1>
+
+        <p class="text-start fs-5 px-2">
+          SG Company offers A to Z web services such as ERP solutions, mobile
+          application development, and digital marketing. It aims to maintain
+          you a complete workflow without hampering your wallet. It is the one
+          stop destination for all IT solutions within your reach and
+          affordability. Our strength is our outstanding team which consists of
+          members with knowledge, hard work, spirit, dedication, and experience.
+          Thus, they have the best talents to face every project as a challenge.
+          The team members follow up every issue using the best methods, care
+          and devotion to client’s satisfaction, the topmost priority of the
+          company.
+        </p>
+        <h1 class="text-start px-2">WHY US ?</h1>
+        <p class="text-start fs-5 px-2">
+          We have the capability of organizing the successful multi-site
+          projects that need time and efforts. Inevitably, we are able to
+          decrease your development costs by delivering the project within a few
+          weeks. We have a separate team of software developers that develops
+          and enhances designs of the projects. It is for sure that you do not
+          find such technical specialists easily in the market, but we find,
+          select, and employ the skilled experts for your work at an affordable
+          and market-friendly cost. Without the satisfaction of clients, we do
+          not go for any financial deal. We have the solutions to rescue you
+          from any situation if you are not satisfied with your current
+          outsourcing project.
+        </p>
+      </div>
+      <div class="image-us">
+        <img
+          src="https://i.pinimg.com/originals/d8/ac/7a/d8ac7a8e9f8bf25b1cf81b98c7ae0d76.gif"
+          alt="about-us"
+        />
+      </div>
+    </div>
+
+    <span id="copyright">All Rights Reserved @ sutanu ghosal</span>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/static/js/script.js"></script>
+    <!--<script src="" th:src="@{/js/script.js}"></script> -->
+  </body>
+</html>

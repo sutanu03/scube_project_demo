@@ -12,7 +12,7 @@ import com.sutanu.main.repository.SupplierRepo;
 @Controller
 @ControllerAdvice
 public class ControllerForSupplier {
-	
+/*	
 	@Autowired
 	SupplierRepo supp;	
 	
@@ -34,5 +34,5 @@ public class ControllerForSupplier {
 		return "suppDetails.html";
 		//return "redirect:/home";
 	}
-	
+	*/
 }

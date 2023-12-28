@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="ISO-8859-1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Purchase Order</title>
+    <link rel="stylesheet"
+          href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+    </script>
+    <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    </script>
+     <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- <link href="" rel="stylesheet" th:href="@{/css_and_images/quotation_css.css}">-->
+    <link rel="stylesheet" href="/static/css_and_images/quotation_css.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-dark" style="background-color: #0047ab" fixed-top>
+      <!-- Navbar content -->
+      <div class="container-fluid">
+        <a class="navbar-brand" href="dashboard.html">Dashboard</a>
+        <div title="Go to Account">
+          <span
+            class="bx bx-user bg-light"
+            id="userLogo"
+            onclick="window.location.href='userDetails.html';"
+          ></span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="header-text2 text-center">Purchase Order Generate</div>
+
+    
+    <form action="quotationEntry" name="quotationEntryForm" method="post"></form>
+
+    <div class="master-data d-flex">
+      <div class="data-1">
+        <label class="align-middle">PO Number:</label>
+          <input
+              type="text"
+              name="a_quotation_no"
+              placeholder="ex: PO-001"
+              required
+            />
+      </div>
+      
+            <div class="data-1">
+              <label>PO Date:</label>
+            <input type="date" name="b_date" required />
+            </div>
+            
+<div class="data-1 d-flex">
+  <label>PO Delivered Date:</label>
+            <p class="py-1" id="datetime" name="e_submission_date" style="color: grey;"></p>
+</div>
+            
+
+    </div>
+    <div class="master-data d-flex">
+      <div class="data-1">
+
+        <label class="py-2">Select suppliers:</label>
+            <select>
+              <option value="c_supplierCode">ITC-01-001</option>
+              <option value="c_supplierCode">LTI-03-002</option>
+            </select>
+      </div>
+
+      <div class="data-1">
+        <label class="align-middle">Supplier Name:</label>
+          <input
+              type="text"
+              name="a_quotation_no"
+              placeholder="ex: ITC"
+              required
+            />
+      </div>
+
+      <div class="data-1">
+<label>Quote Number:</label>
+<select>
+    <option value="c_supplierCode">Quote-001</option>
+    <option value="c_supplierCode">Quote-002</option>
+  </select>
+      </div>
+            
+    </div> 
+    <hr>
+            
+          <!--   
+    <select class="form-control" id="dropDownList">
+    <option value="0">select option</option>
+    <option th:each="option : ${options}" th:value="${option}" th:text="${option}"></option>
+</select>
+ -->
+ <div class="header-text2 text-center">Details</div>
+ <div class="table-div p-2">
+
+   <table class="table table-bordered" id="myTable">
+  <thead>
+    <tr class="table-active">
+      <th scope="col">Item Code</th>
+      <th scope="col">Description</th>
+      <th scope="col">Rate</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Amount</th>
+      
+    </tr>
+    
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">
+        <select class="select-input">
+          <option value="f_productCode">PCode-001</option>
+          <option value="f_productCode">PCode-002</option>
+          <option value="f_productCode">PCode-003</option>
+          <option value="f_productCode">PCode-004</option>
+        </select>
+    </th>
+      <td class="text-center align-middle" id="description">
+        <input class="select-input"
+              type="text"
+              name="g_description"
+              placeholder="write about PO(within 250 letters)"
+              required
+            />
+      </td>
+      <td class="text-center align-middle">
+        <input class="select-input" type="number" name="h_rate" placeholder="ex: 499" required />
+      </td>
+      <td class="text-center align-middle">
+        <input class="select-input" type="number" name="i_qnty" placeholder="ex: 10" required />
+      </td>
+      <td class="text-center align-middle">
+        <input class="select-input"
+              type="number"
+              name="m_Amount"
+              placeholder="ex: 4990"
+              required
+            />
+      </td>
+    </tr>
+
+
+  </tbody>
+  
+</table>
+<button type="button" class="btn btn-outline-success float-right" id="addRow">+</button>
+ </div>
+
+<div class="text-center">
+  <input
+    class="bttn"
+    type="submit"
+    value="Cancel"
+    onClick="window.location.reload();"
+  />
+  <input
+    class="bttn"
+    type="submit"
+    id="quotationEntryButton"
+    value="Submit"
+  />
+</div>
+    </form>
+
+
+
+    <script>
+
+      $(document).ready(function() {
+  $('#addRow').click(function() {
+    $('#myTable tbody').append(`    <tr>
+      <th scope="row">
+        <select class="select-input">
+          <option value="f_productCode">PCode-001</option>
+          <option value="f_productCode">PCode-002</option>
+          <option value="f_productCode">PCode-003</option>
+          <option value="f_productCode">PCode-004</option>
+        </select>
+    </th>
+      <td class="text-center align-middle" id="description">
+        <input class="select-input"
+              type="text"
+              name="g_description"
+              placeholder="write about PO(within 250 letters)"
+              required
+            />
+      </td>
+      <td class="text-center align-middle">
+        <input class="select-input" type="number" name="h_rate" placeholder="ex: 499" required />
+      </td>
+      <td class="text-center align-middle">
+        <input class="select-input" type="number" name="i_qnty" placeholder="ex: 10" required />
+      </td>
+      <td class="text-center align-middle">
+        <input class="select-input"
+              type="number"
+              name="m_Amount"
+              placeholder="ex: 1299"
+              required
+            />
+      </td>
+    </tr>`);
+  });
+});
+var now = new Date();
+  var datetime = now.toLocaleString();
+
+  // Insert date and time into HTML
+  document.getElementById("datetime").innerHTML = datetime;
+
+    </script>
+  </body>
+</html>

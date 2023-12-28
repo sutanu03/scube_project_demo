@@ -12,7 +12,7 @@ import com.sutanu.main.repository.QuotationRepo;
 @Controller
 @ControllerAdvice
 public class ControllerForQuotation {
-	
+/*	
 	@Autowired
 	QuotationRepo qr;
 	

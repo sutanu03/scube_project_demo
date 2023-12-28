@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 @ControllerAdvice
 public class ControllerForDashboard {
-
+/*
 	// from newSuppEntry page to dashboard.html page
 	@GetMapping("/toDashboard")
 	public String toDashboardPage() {
@@ -49,5 +49,5 @@ public class ControllerForDashboard {
 		public String redirectInvoice() {
 			return "invoice.html";
 		}
-
+*/
 }

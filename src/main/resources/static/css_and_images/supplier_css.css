@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.full-supp-div {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+}
+
+#userLogo {
+  width: 40px;
+  height: 40px;
+  padding-left: 7px;
+  padding-top: 7px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #0047ab;
+  font-weight: bold;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.first {
+  display: flex;
+}
+
+.first input {
+  width: 300px;
+  padding: 5px;
+  margin: 25px;
+  border-radius: 30px;
+  text-align: center;
+}
+.form-box5 {
+  margin-left: 20px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.header-text2 {
+  margin-top: 20px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 30px;
+  color: #0047ab;
+  text-align: center;
+}
+img {
+  width: 400px;
+  height: 400px;
+  border-radius: 15px;
+  margin: 40px;
+}
+
+.bttn {
+  margin-left: 10px;
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: white;
+  color: #0047ab;
+  border: 1px solid #0047ab;
+  font-weight: bold;
+}
+.bttn:hover {
+  color: #fff;
+  background-color: #0047ab;
+}
+
+/* responsive for phone */
+@media screen and (max-width: 700px) {
+  .col-25,
+  .col-75,
+  img {
+    width: 50%;
+    height: 50%;
+  }
+  .form-box5 {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+  }
+  .full-supp-div {
+    display: inline-block;
+  }
+  .navbar[type="submit"] {
+    width: 100%;
+    margin-top: 0;
+  }
+}

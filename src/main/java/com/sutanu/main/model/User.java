@@ -16,7 +16,7 @@ import jakarta.persistence.Id;
 public class User {
 
 	@Id
-	@Column(name = "email_id")
+	@Column(name = "email_id", nullable = false)
 	private String a_email;
 	
 	

@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  color: #0047ab;
+}
+
+.button-box2 {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header-text2 {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.master-data {
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.master-data input {
+  width: 300px;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+
+.master-data input::after {
+  margin-right: 20px;
+}
+
+.table-div2 table input {
+  width: 100%;
+}
+
+.table-div2 table select {
+  width: 100%;
+}
+
+input {
+  width: 230px;
+  height: 40px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+label {
+  width: 150px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+select {
+  width: 230px;
+  height: 40px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+#description input {
+  width: 400px;
+}
+
+.select-input {
+  width: 100px;
+}
+table {
+  width: 90%;
+}
+
+.bttn {
+  margin: 20px;
+  background-color: #fff;
+  color: #0047ab;
+  width: 130px;
+  height: 35px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid #0047ab;
+  font-weight: bold;
+}
+.bttn:hover {
+  background-color: #0047ab;
+  color: #fff;
+}
+
+#userLogo {
+  width: 40px;
+  height: 40px;
+  padding-left: 7px;
+  padding-top: 7px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #0047ab;
+  font-weight: bold;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+span {
+  color: #0047ab;
+}

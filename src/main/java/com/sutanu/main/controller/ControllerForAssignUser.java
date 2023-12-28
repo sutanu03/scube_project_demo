@@ -17,7 +17,7 @@ import com.sutanu.main.repository.UserRepo;
 @Controller
 @ControllerAdvice
 public class ControllerForAssignUser {
-
+/*
 	@Autowired
 	AssignUserRepo aur;
 
@@ -51,5 +51,5 @@ public class ControllerForAssignUser {
 //			return "redirect:/redirectAssignUser";
 //		}
 //	}
-
+*/
 }

@@ -1,5 +1,7 @@
 package com.sutanu.main.model;
 
+import org.springframework.stereotype.Component;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -9,7 +11,7 @@ import jakarta.persistence.Id;
  * POJO class for AssignUser
  * 
  * */
-
+@Component
 @Entity
 public class AssignUser {
 	
