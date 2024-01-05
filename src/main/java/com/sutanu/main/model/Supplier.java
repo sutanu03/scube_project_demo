@@ -11,7 +11,6 @@ import jakarta.persistence.Id;
  * POJO class for supplier
  * 
  * */
-@Component
 @Entity
 public class Supplier {
 	

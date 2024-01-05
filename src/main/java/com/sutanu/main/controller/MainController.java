@@ -1,6 +1,8 @@
 package com.sutanu.main.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sutanu.main.model.Quotation;
+import com.sutanu.main.model.Supplier;
 import com.sutanu.main.model.User;
 import com.sutanu.main.repository.QuotationRepo;
+import com.sutanu.main.repository.SupplierRepo;
 import com.sutanu.main.repository.UserRepo;
 
 @RestController
@@ -89,8 +93,66 @@ public class MainController {
 			@PostMapping("/quote/add")
 			public String createQuote(@RequestBody Quotation quote)
 			{
+				
 				qr.save(quote);
 				return "Quotation Created";
 			}
+			
+			// Check if the quotation number exists
+			@PostMapping("/quote/checkQuotationNumber")
+			  public Map<String, Boolean> checkQuotationNumber(@RequestBody Map<String, String> requestData) {
+			    String a_quotation_number = requestData.get("quotationNumber");
+			    Map<String, Boolean> response = new HashMap<>();
+			    response.put("exists", qr.existsById(a_quotation_number));
+			    return response;
+			  }
+			
+			
+			
+			/*
+			 * 
+			 * 
+			 * Supplier CRED OPERATION
+			 * 
+			 * 
+			 * */
+			
+			@Autowired
+			private SupplierRepo sr;
+			
+			//add quotation
+				@PostMapping("/supplier/add")
+				public String createSupp(@RequestBody Supplier supp)
+				{
+					sr.save(supp);
+					return "Supplier Created";
+				}
+				
+				// read all supplier
+				@GetMapping("/supplier/read/all")
+				public List<Supplier> readSupplier()
+				{
+					return sr.findAll();
+				}
+				
+				
+				/*
+				 * 
+				 * 
+				 * Product CRED OPERATION
+				 * 
+				 * 
+				 * 
+				
+				@Autowired
+				private Product
+				
+				//add quotation
+					@PostMapping("/supplier/add")
+					public String createSupp(@RequestBody Supplier supp)
+					{
+						sr.save(supp);
+						return "Supplier Created";
+					} */
 
 }

@@ -8,6 +8,11 @@ import com.sutanu.main.model.Quotation;
 @Repository
 public interface QuotationRepo extends JpaRepository<Quotation, String>{
 
+//	boolean existsByAQuotationNumber(String a_quotation_number);
+	
+//	@Query("SELECT a_quotation_number FROM Quotation WHERE a_quotation_number = 'Quote-001'1 ")
+//	List<Quotation> findQuoteNo(String a_quotation_number);
+//	
 	
 //	4. Populate a Drop Down With a List 
 //	Now let’s see how to populate a Drop Down with a list in Thymeleaf. To do so, we’ll create a String list in a controller, and display it in a view.
