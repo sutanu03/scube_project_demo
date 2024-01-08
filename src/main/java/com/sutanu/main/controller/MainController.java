@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sutanu.main.model.Product;
 import com.sutanu.main.model.Quotation;
 import com.sutanu.main.model.Supplier;
 import com.sutanu.main.model.User;
+import com.sutanu.main.repository.ProductRepo;
 import com.sutanu.main.repository.QuotationRepo;
 import com.sutanu.main.repository.SupplierRepo;
 import com.sutanu.main.repository.UserRepo;
@@ -142,17 +144,24 @@ public class MainController {
 				 * Product CRED OPERATION
 				 * 
 				 * 
-				 * 
+				 */
 				
 				@Autowired
-				private Product
+				private ProductRepo pr;
 				
-				//add quotation
-					@PostMapping("/supplier/add")
-					public String createSupp(@RequestBody Supplier supp)
+				//add Product
+					@PostMapping("/product/add")
+					public String createProd(@RequestBody Product prod)
 					{
-						sr.save(supp);
-						return "Supplier Created";
-					} */
+						pr.save(prod);
+						return "Product Created";
+					} 
+					
+					// read all product
+					@GetMapping("/product/read/all")
+					public List<Product> readProduct()
+					{
+						return pr.findAll();
+					}
 
 }

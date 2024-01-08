@@ -11,7 +11,6 @@ import jakarta.persistence.Id;
  * POJO class for user
  * 
  * */
-@Component
 @Entity
 public class User {
 

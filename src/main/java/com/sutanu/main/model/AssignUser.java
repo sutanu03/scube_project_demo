@@ -11,7 +11,6 @@ import jakarta.persistence.Id;
  * POJO class for AssignUser
  * 
  * */
-@Component
 @Entity
 public class AssignUser {
 	

@@ -11,7 +11,6 @@ import jakarta.persistence.Id;
  * POJO class for quotation
  * 
  * */
-@Component
 @Entity
 public class Quotation {
 
