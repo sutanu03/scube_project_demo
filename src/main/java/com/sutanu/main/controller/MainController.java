@@ -16,9 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sutanu.main.model.Product;
 import com.sutanu.main.model.Quotation;
+import com.sutanu.main.model.QuotationDetail;
 import com.sutanu.main.model.Supplier;
 import com.sutanu.main.model.User;
 import com.sutanu.main.repository.ProductRepo;
+import com.sutanu.main.repository.QuotationDetailRepo;
 import com.sutanu.main.repository.QuotationRepo;
 import com.sutanu.main.repository.SupplierRepo;
 import com.sutanu.main.repository.UserRepo;
@@ -111,6 +113,35 @@ public class MainController {
 			
 			
 			
+			
+			/*
+			 * 
+			 * 
+			 * Quotation-Detail CRED OPERATION
+			 * 
+			 * 
+			 * */
+			
+			@Autowired
+			private QuotationDetailRepo qdr;
+			
+			//add one quotation detail
+				@PostMapping("/quote/details/add")
+				public String createQuoteDetail(@RequestBody QuotationDetail qd)
+				{
+					
+					qdr.save(qd);
+					return "Quotation Details Created";
+				}
+				
+				// add multiple quotatioon details
+				@PostMapping("/quote/details/add/all")
+				public List<QuotationDetail> createQuoteDetailAll(@RequestBody List<QuotationDetail> listQD) {
+				        return qdr.saveAll(listQD);
+				}
+				
+			
+			
 			/*
 			 * 
 			 * 
@@ -150,12 +181,10 @@ public class MainController {
 				private ProductRepo pr;
 				
 				//add Product
-					@PostMapping("/product/add")
-					public String createProd(@RequestBody Product prod)
-					{
-						pr.save(prod);
-						return "Product Created";
-					} 
+					@PostMapping("/product/add/all")
+					public List<Product> createProd(@RequestBody List<Product> listProducts) {
+					        return pr.saveAll(listProducts);
+					}
 					
 					// read all product
 					@GetMapping("/product/read/all")
