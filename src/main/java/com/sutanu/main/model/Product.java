@@ -1,17 +1,23 @@
 package com.sutanu.main.model;
 
+import java.util.Set;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="product")
 public class Product {
 
 	@Id
 	@Column(name = "prod_code", nullable = false)
 	private String a_prod_code;
-	
-	
+		
 	@Column(name = "prod_name")
 	private String b_prod_name;
 	
@@ -32,6 +38,9 @@ public class Product {
 	
 	@Column(name = "gst_number")
 	private String h_gst_number;
+	
+	@OneToMany(mappedBy ="product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<QuotationDetail> quotationDetail;
 
 	public Product() {
 		super();
@@ -39,7 +48,7 @@ public class Product {
 	}
 
 	public Product(String a_prod_code, String b_prod_name, String c_description, String d_unit_price, String e_category,
-			String f_designation, String g_amount, String h_gst_number) {
+			String f_designation, String g_amount, String h_gst_number, Set<QuotationDetail> quotationDetail) {
 		super();
 		this.a_prod_code = a_prod_code;
 		this.b_prod_name = b_prod_name;
@@ -49,6 +58,7 @@ public class Product {
 		this.f_designation = f_designation;
 		this.g_amount = g_amount;
 		this.h_gst_number = h_gst_number;
+		this.quotationDetail = quotationDetail;
 	}
 
 	public String getA_prod_code() {
@@ -115,13 +125,21 @@ public class Product {
 		this.h_gst_number = h_gst_number;
 	}
 
+	public Set<QuotationDetail> getQuotationDetail() {
+		return quotationDetail;
+	}
+
+	public void setQuotationDetail(Set<QuotationDetail> quotationDetail) {
+		this.quotationDetail = quotationDetail;
+	}
+
 	@Override
 	public String toString() {
 		return "Product [a_prod_code=" + a_prod_code + ", b_prod_name=" + b_prod_name + ", c_description="
 				+ c_description + ", d_unit_price=" + d_unit_price + ", e_category=" + e_category + ", f_designation="
-				+ f_designation + ", g_amount=" + g_amount + ", h_gst_number=" + h_gst_number + "]";
+				+ f_designation + ", g_amount=" + g_amount + ", h_gst_number=" + h_gst_number + ", quotationDetail="
+				+ quotationDetail + "]";
 	}
-	
-	
+
 	
 }

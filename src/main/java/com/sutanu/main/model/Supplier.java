@@ -1,10 +1,14 @@
 package com.sutanu.main.model;
 
-import org.springframework.stereotype.Component;
+import java.util.Set;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 /*
  * 
@@ -12,6 +16,7 @@ import jakarta.persistence.Id;
  * 
  * */
 @Entity
+@Table(name = "supplier")
 public class Supplier {
 	
 	@Id
@@ -44,6 +49,9 @@ public class Supplier {
 	
 	@Column(name = "gst_number")
 	private String h_gst_number;
+	
+	@OneToMany(mappedBy ="supplier", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Quotation> quotation;
 
 	public Supplier() {
 		super();
@@ -51,7 +59,8 @@ public class Supplier {
 	}
 
 	public Supplier(String a_supplierCode, String b_supplierName, String c_address, String d_contact_no,
-			String e_contact_person, String f_designation, String g_mobile_no, String h_gst_number) {
+			String e_contact_person, String f_designation, String g_mobile_no, String h_gst_number,
+			Set<Quotation> quotation) {
 		super();
 		this.a_supplierCode = a_supplierCode;
 		this.b_supplierName = b_supplierName;
@@ -61,6 +70,7 @@ public class Supplier {
 		this.f_designation = f_designation;
 		this.g_mobile_no = g_mobile_no;
 		this.h_gst_number = h_gst_number;
+		this.quotation = quotation;
 	}
 
 	public String getA_supplierCode() {
@@ -127,12 +137,21 @@ public class Supplier {
 		this.h_gst_number = h_gst_number;
 	}
 
+	public Set<Quotation> getQuotation() {
+		return quotation;
+	}
+
+	public void setQuotation(Set<Quotation> quotation) {
+		this.quotation = quotation;
+	}
+
 	@Override
 	public String toString() {
 		return "Supplier [a_supplierCode=" + a_supplierCode + ", b_supplierName=" + b_supplierName + ", c_address="
 				+ c_address + ", d_contact_no=" + d_contact_no + ", e_contact_person=" + e_contact_person
 				+ ", f_designation=" + f_designation + ", g_mobile_no=" + g_mobile_no + ", h_gst_number=" + h_gst_number
-				+ "]";
+				+ ", quotation=" + quotation + "]";
 	}
-	
+
+			
 }
