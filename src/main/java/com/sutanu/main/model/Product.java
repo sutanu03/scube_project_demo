@@ -39,7 +39,7 @@ public class Product {
 	@Column(name = "gst_number")
 	private String h_gst_number;
 	
-	@OneToMany(mappedBy ="product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy ="product", cascade = CascadeType.ALL)
     private Set<QuotationDetail> quotationDetail;
 
 	public Product() {

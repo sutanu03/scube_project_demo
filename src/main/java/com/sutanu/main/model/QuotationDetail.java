@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 public class QuotationDetail {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long quote_details_id;
 	
 	@ManyToOne

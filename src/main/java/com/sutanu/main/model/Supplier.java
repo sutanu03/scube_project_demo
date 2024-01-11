@@ -5,7 +5,6 @@ import java.util.Set;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -50,7 +49,7 @@ public class Supplier {
 	@Column(name = "gst_number")
 	private String h_gst_number;
 	
-	@OneToMany(mappedBy ="supplier", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy ="supplier", cascade = CascadeType.ALL)
     private Set<Quotation> quotation;
 
 	public Supplier() {

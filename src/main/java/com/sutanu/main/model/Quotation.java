@@ -5,7 +5,6 @@ import java.util.Set;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -38,7 +37,7 @@ public class Quotation {
 	@Column(name = "submission_date")
 	private String submission_dateo;
 	
-	@OneToMany(mappedBy ="quotation", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy ="quotation", cascade = CascadeType.ALL)
     private Set<QuotationDetail> quotationsDetail;
 
 	public Quotation() {
